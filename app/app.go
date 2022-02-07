@@ -201,8 +201,8 @@ type OsmosisApp struct {
 
 	invCheckPeriod uint
 
-	// keys to access the substores
-	keys    map[string]*sdk.KVStoreKey
+	// Keys to access the substores
+	Keys    map[string]*sdk.KVStoreKey
 	tkeys   map[string]*sdk.TransientStoreKey
 	memKeys map[string]*sdk.MemoryStoreKey
 
@@ -292,7 +292,7 @@ func NewOsmosisApp(
 		appCodec:          appCodec,
 		interfaceRegistry: interfaceRegistry,
 		invCheckPeriod:    invCheckPeriod,
-		keys:              keys,
+		Keys:              keys,
 		tkeys:             tkeys,
 		memKeys:           memKeys,
 	}
@@ -576,7 +576,7 @@ func (app *OsmosisApp) InterfaceRegistry() types.InterfaceRegistry {
 //
 // NOTE: This is solely to be used for testing purposes.
 func (app *OsmosisApp) GetKey(storeKey string) *sdk.KVStoreKey {
-	return app.keys[storeKey]
+	return app.Keys[storeKey]
 }
 
 // GetTKey returns the TransientStoreKey for the provided store key.
