@@ -367,6 +367,10 @@ func NewOsmosisApp(
 		authz.ModuleName,
 		// Note: epochs' endblock should be "real" end of epochs, we keep epochs endblock at the end
 		epochstypes.ModuleName,
+
+		//[authz transfer genutil auth params lockup bech32ibc bank crisis claim gamm txfees incentives vesting gov]
+		authz.ModuleName, genutiltypes.ModuleName, authtypes.ModuleName, paramstypes.ModuleName, lockuptypes.ModuleName, bech32ibctypes.ModuleName,
+		banktypes.ModuleName, crisistypes.ModuleName, claimtypes.ModuleName, gammtypes.ModuleName, txfees.ModuleName,
 	)
 
 	// NOTE: The genutils moodule must occur after staking so that pools are
